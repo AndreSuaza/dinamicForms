@@ -21,84 +21,253 @@ export class ConstruccionComponent {
 
   fields = [];
   formData = {
+    "formularioId": 51,
+    "nombre": "Formulario de Solicitud de Credito Hipotecario",
+    "descripcion": "Dentro del Formulario de Solicitud de Credito Hipotecario, se almacenara toda la información de cotizantes",
+    "href": null,
     "activo": true,
-    "descripcion": "string",
-    "formularioId": 0,
     "lstBloques": [
       {
-        "lstCampos": [
-          {
-            "campoId": '01',
-            "click": "string",
-            "descripcion": "string",
-            "extension": "",
-            "help": "Esta campo es tipo texto",
-            "icon": "string",
-            "items": "string",
-            "label": "Nombre: ",
-            "nombre": "nombre",
-            "nombreDocumento": "string",
-            "objToDisplay": "test=si",
-            "orden": 0,
-            "placeholder": "Nombre del titurlar",
-            "time": "string",
-            "tipoCampoId": {
-              "descripcion": "string",
-              "tipoCampoId": 0
-            },
-            "tipoDatoId": {
-              "descripcion": "string",
-              "sinonimo": "string",
-              "tipoDatoId": 0
-            },
-            "tipoSeleccionId": {
-              "descripcion": "string",
-              "tipoSeleccionId": 0
-            },
-            "value": ""
-          },
-          {
-            "campoId": '02',
-            "click": "string",
-            "descripcion": "string",
-            "extension": "",
-            "help": "Esta campo test",
-            "icon": "string",
-            "items": "string",
-            "label": "Test: ",
-            "nombre": "test",
-            "nombreDocumento": "string",
-            "objToDisplay": "",
-            "orden": 0,
-            "placeholder": "Nombre del titurlar",
-            "time": "string",
-            "tipoCampoId": {
-              "descripcion": "string",
-              "tipoCampoId": 0
-            },
-            "tipoDatoId": {
-              "descripcion": "string",
-              "sinonimo": "string",
-              "tipoDatoId": 0
-            },
-            "tipoSeleccionId": {
-              "descripcion": "string",
-              "tipoSeleccionId": 0
-            },
-            "value": ""
-          }
-        ],
-        "nombre": "string",
-        "nombreTabla": "string"
-      }
+            "bloqueId": 51,
+            "nombre": "Referencias Personales",
+            "nombreTabla": "ReferenciasPersonales",
+            "lstCamposDTO": [
+              {
+                "campoId": 31,
+                "nombre": "nombre",
+                "descripcion": "Nombre Usuario",
+                "label": "Nombre",
+                "tipoCampoId": {
+                    "tipoCampoId": 1,
+                    "descripcion": "Input"
+                },
+                "placeholder": null,
+                "value": "",
+                "icon": null,
+                "click": null,
+                "items": "TipoIdentificacion",
+                "objToDisplay": "",
+                "help": null,
+                "time": null, 
+                "orden": null,
+                "tipoDatoId": {
+                    "tipoDatoId": 2,
+                    "descripcion": "VARCHAR",
+                    "sinonimo": "VARCHAR"
+                },
+                "cantidadCaracteresCampo": 100,
+                "tipoSeleccionId": {
+                    "tipoSeleccionId": 2,
+                    "descripcion": "Múltiple"
+                },
+                "campoURL": null,
+                "nombreDocumento": null,
+                "extension": null
+              },
+              {
+                "campoId": 31,
+                "nombre": "documento",
+                "descripcion": "Nombre Usuario",
+                "label": "Documento",
+                "tipoCampoId": {
+                    "tipoCampoId": 3,
+                    "descripcion": "Documento"
+                },
+                "placeholder": null,
+                "value": "",
+                "icon": null,
+                "click": null,
+                "items": "TipoIdentificacion",
+                "objToDisplay": "",
+                "help": null,
+                "time": null, 
+                "orden": null,
+                "tipoDatoId": {
+                    "tipoDatoId": 2,
+                    "descripcion": "VARCHAR",
+                    "sinonimo": "VARCHAR"
+                },
+                "cantidadCaracteresCampo": 100,
+                "tipoSeleccionId": {
+                    "tipoSeleccionId": 2,
+                    "descripcion": "Múltiple"
+                },
+                "campoURL": null,
+                "nombreDocumento": null,
+                "extension": null
+              }
+              ,
+              {
+                    "campoId": 32,
+                    "nombre": "Cedula",
+                    "descripcion": "Cedula del Solicitante",
+                    "label": "Nombre Label",
+                    "tipoCampoId": {
+                        "tipoCampoId": 5,
+                        "descripcion": "Checkbox"
+                    },
+                    "placeholder": null,
+                    "value": null,
+                    "icon": null,
+                    "click": null,
+                    "items": "TipoIdentificacion",
+                    "objToDisplay": "",
+                    "help": null,
+                    "time": null, 
+                    "orden": null,
+                    "tipoDatoId": {
+                        "tipoDatoId": 2,
+                        "descripcion": "VARCHAR",
+                        "sinonimo": "VARCHAR"
+                    },
+                    "cantidadCaracteresCampo": 100,
+                    "tipoSeleccionId": {
+                        "tipoSeleccionId": 2,
+                        "descripcion": "Múltiple"
+                    },
+                    "campoURL": null,
+                    "nombreDocumento": null,
+                    "extension": null,
+                    "tablaMaestra": {
+                        "nombreTabla": "TipoIdentificacion",
+                        "activo": true,
+                        "descripcion": "Tipo de Identificación",
+                        "camposTablaMaestra": null,
+                        "lstValoresTablaMaestra": null,
+                        "lstRegValoresTablaMaestraDTO": [{
+                                "id": 1,
+                                "codigo": "C",
+                                "descripcion": "Cédula",
+                                "activo": true,
+                                "tramiteId": 1
+                            }, {
+                                "id": 2,
+                                "codigo": "p",
+                                "descripcion": "Pasaporte",
+                                "activo": true,
+                                "tramiteId": 1
+                            }
+                        ],
+                    }
+                }
+                ,
+                {
+                    "campoId": 33,
+                    "nombre": "ciudad",
+                    "descripcion": "Ciudad actual",
+                    "label": "Ciudad",
+                    "tipoCampoId": {
+                        "tipoCampoId": 2,
+                        "descripcion": "Select"
+                    },
+                    "placeholder": null,
+                    "value": null,
+                    "icon": null,
+                    "click": null,
+                    "items": "",
+                    "objToDisplay": "",
+                    "help": null,
+                    "time": null, 
+                    "orden": null,
+                    "tipoDatoId": {
+                        "tipoDatoId": 2,
+                        "descripcion": "VARCHAR",
+                        "sinonimo": "VARCHAR"
+                    },
+                    "cantidadCaracteresCampo": 100,
+                    "tipoSeleccionId": {
+                        "tipoSeleccionId": 2,
+                        "descripcion": "Múltiple"
+                    },
+                    "campoURL": null,
+                    "nombreDocumento": null,
+                    "extension": null,
+                    "tablaMaestra": {
+                        "nombreTabla": "TipoIdentificacion",
+                        "activo": true,
+                        "descripcion": "Tipo de Identificación",
+                        "camposTablaMaestra": null,
+                        "lstValoresTablaMaestra": null,
+                        "lstRegValoresTablaMaestraDTO": [{
+                                "id": 1,
+                                "codigo": "10001",
+                                "descripcion": "Bogota",
+                                "activo": true,
+                                "tramiteId": 1
+                            }, {
+                                "id": 2,
+                                "codigo": "10005",
+                                "descripcion": "Cali",
+                                "activo": true,
+                                "tramiteId": 1
+                            }
+                        ],
+                    }
+                }
+                ,
+                {
+                  "campoId": 33,
+                  "nombre": "estadiCivil",
+                  "descripcion": "Estadi Civil",
+                  "label": "Estadi Civil",
+                  "tipoCampoId": {
+                      "tipoCampoId": 4,
+                      "descripcion": "Radio Button"
+                  },
+                  "placeholder": null,
+                  "value": null,
+                  "icon": null,
+                  "click": null,
+                  "items": "",
+                  "objToDisplay": "",
+                  "help": null,
+                  "time": null, 
+                  "orden": null,
+                  "tipoDatoId": {
+                      "tipoDatoId": 2,
+                      "descripcion": "VARCHAR",
+                      "sinonimo": "VARCHAR"
+                  },
+                  "cantidadCaracteresCampo": 100,
+                  "tipoSeleccionId": {
+                      "tipoSeleccionId": 2,
+                      "descripcion": "Múltiple"
+                  },
+                  "campoURL": null,
+                  "nombreDocumento": null,
+                  "extension": null,
+                  "tablaMaestra": {
+                      "nombreTabla": "TipoIdentificacion",
+                      "activo": true,
+                      "descripcion": "Tipo de Identificación",
+                      "camposTablaMaestra": null,
+                      "lstValoresTablaMaestra": null,
+                      "lstRegValoresTablaMaestraDTO": [{
+                              "id": 1,
+                              "codigo": "casado",
+                              "descripcion": "Casado",
+                              "activo": true,
+                              "tramiteId": 1
+                          }, {
+                              "id": 2,
+                              "codigo": "soltero",
+                              "descripcion": "Soltero",
+                              "activo": true,
+                              "tramiteId": 1
+                          }
+                      ],
+                  }
+              }
+            ],
+            "lstCampos": null
+        }
     ],
-    "nombre": "Formulario Vivienda"
-  };
+};
 
 
   constructor( private _builder: FormBuilder ) { 
 
-      this.fields = this.formData.lstBloques[0].lstCampos;
+      this.fields = this.formData.lstBloques[0].lstCamposDTO;
       this. generateObjetFrom();
     	// this.form = this._builder.group({
       //   nombre: ['', Validators.required],
@@ -112,11 +281,30 @@ export class ConstruccionComponent {
 
     var objForm = {};
     this.fields.forEach( field => {
-      Object.defineProperty(objForm,field.nombre,{
-        value:field.value, 
-        writable : true,
-        enumerable : true
-      });
+
+      if( field.tipoCampoId.tipoCampoId == "5") {
+
+        field.tablaMaestra.lstRegValoresTablaMaestraDTO.forEach( internalField => {
+
+          Object.defineProperty(objForm,internalField.codigo,{
+            value: [''], 
+            writable : true,
+            enumerable : true
+          });
+
+        });
+        console.log('Entra');
+
+      } else {
+
+        Object.defineProperty(objForm,field.nombre,{
+          value:[field.value], 
+          writable : true,
+          enumerable : true
+        });
+
+      }
+
     });
     console.log('generateObjetFrom', objForm)
     this.form = this._builder.group(objForm);
@@ -145,7 +333,7 @@ export class ConstruccionComponent {
 
       });
 
-      return response;
+      return false;
     }
 
     return true;

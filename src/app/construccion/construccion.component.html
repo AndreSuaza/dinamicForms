@@ -1,28 +1,55 @@
+<div class="container">
 <h1>{{ formData.nombre }} </h1>
-
-<!-- <form [formGroup]="form" (ngSubmit)="enviar(form.value)">
-
-    <label>nombre</label>
-    <input type="text" formControlName="nombre"/>
-    <div *ngIf="form.get('nombre').hasError('required') && form.get('nombre').touched" >Campo nesesario</div>
-    <label>email</label>
-    <input type="text" formControlName="email"/>
-    <input [disabled]="form.invalid" type="submit" value="enviar">
-
-</form> -->
-
-
 
 <form  [formGroup]="form" (ngSubmit)="enviar(form.value)">
    <div *ngFor="let field of fields">
 
-    <div *ngIf="field.tipoCampoId.tipoCampoId == 0" >
+    <div *ngIf="field.tipoCampoId.tipoCampoId == 1" class="form-group">
         <div *ngIf="validateField(field.campoId)">
             <label>{{ field.label }}</label>
-            <input type="text" formControlName="{{ field.nombre }}" placeholder="{{ field.placeholder }}"/>
+            <input  class="form-control" type="text" formControlName="{{ field.nombre }}" placeholder="{{ field.placeholder }}"/>
         </div>
     </div>
 
+    <div *ngIf="field.tipoCampoId.tipoCampoId == 2" class="form-group">
+        <label class="form-check-label" for="defaultCheck1">{{ field.label }}</label>
+        <select class="form-control" id="exampleFormControlSelect1" formControlName="{{ field.nombre }}">
+        <option *ngFor="let select of field.tablaMaestra.lstRegValoresTablaMaestraDTO" class="form-control">
+           {{ select.descripcion }}
+        </option>
+        </select>
+    </div>
+
+    <div *ngIf="field.tipoCampoId.tipoCampoId == 3" class="form-group">
+        <label>{{ field.label }}</label>
+        <input type="file" class="form-control-file" id="" formControlName="{{ field.nombre }}"/>
+    </div>
+
+    <div *ngIf="field.tipoCampoId.tipoCampoId == 4" class="form-group">
+        <label>{{ field.label }}</label>
+        
+        <div *ngFor="let radio of field.tablaMaestra.lstRegValoresTablaMaestraDTO" class="form-check">
+           
+            <input class="form-check-input" type="radio" name="{{ field.nombre }}" id="{{ radio.id }}" value="{{ radio.codigo }}" formControlName="{{ field.nombre }}">
+            <label class="form-check-label" for="{{ radio.id }}">{{ radio.descripcion }}</label>
+
+        </div>
+        
+    </div>
+      
+    <div *ngIf="field.tipoCampoId.tipoCampoId == 5" class="form-group">
+        <label>{{ field.label }}</label>
+        
+        <div *ngFor="let check of field.tablaMaestra.lstRegValoresTablaMaestraDTO" class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" formControlName="{{ check.codigo }}" >
+            <label class="form-check-label" for="defaultCheck1">
+             {{ check.descripcion }}
+            </label>
+        </div>
+        
+    </div>
+
    </div>
-   <input  type="submit" value="enviar">
+   <input  type="submit"  class="btn btn-primary" value="enviar">
 </form>
+</div>
