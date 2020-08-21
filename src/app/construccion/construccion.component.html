@@ -1,0 +1,28 @@
+<h1>{{ formData.nombre }} </h1>
+
+<!-- <form [formGroup]="form" (ngSubmit)="enviar(form.value)">
+
+    <label>nombre</label>
+    <input type="text" formControlName="nombre"/>
+    <div *ngIf="form.get('nombre').hasError('required') && form.get('nombre').touched" >Campo nesesario</div>
+    <label>email</label>
+    <input type="text" formControlName="email"/>
+    <input [disabled]="form.invalid" type="submit" value="enviar">
+
+</form> -->
+
+
+
+<form  [formGroup]="form" (ngSubmit)="enviar(form.value)">
+   <div *ngFor="let field of fields">
+
+    <div *ngIf="field.tipoCampoId.tipoCampoId == 0" >
+        <div *ngIf="validateField(field.campoId)">
+            <label>{{ field.label }}</label>
+            <input type="text" formControlName="{{ field.nombre }}" placeholder="{{ field.placeholder }}"/>
+        </div>
+    </div>
+
+   </div>
+   <input  type="submit" value="enviar">
+</form>
