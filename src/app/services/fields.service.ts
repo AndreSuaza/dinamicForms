@@ -6,248 +6,644 @@ import { Injectable } from '@angular/core';
 export class FieldsService {
 
   fields = {
-    "formularioId": 51,
+    "formularioId": 70,
     "nombre": "Formulario de Solicitud de Credito Hipotecario",
     "descripcion": "Dentro del Formulario de Solicitud de Credito Hipotecario, se almacenara toda la información de cotizantes",
     "href": null,
     "activo": true,
-    "lstBloques": [
-      {
-            "bloqueId": 51,
-            "nombre": "Referencias Personales",
-            "nombreTabla": "ReferenciasPersonales",
+    "lstBloques": [{
+            "bloqueId": 81,
+            "nombre": "Datos Vivienda",
+            "nombreTabla": "DatosVivienda",
             "lstCamposDTO": [
-              {
-                "campoId": 31,
-                "nombre": "nombre",
-                "descripcion": "Nombre Usuario",
-                "label": "Nombre",
-                "tipoCampoId": {
-                    "tipoCampoId": 1,
-                    "descripcion": "Input"
-                },
-                "placeholder": null,
-                "value": "",
-                "icon": null, //Pendiente
-                "click": null, 
-                "items": "TipoIdentificacion",
-                "objToDisplay": "", //??
-                "help": "en este campo va el nombre",
-                "time": null, 
-                "orden": null,
-                "tipoDatoId": {
-                    "tipoDatoId": 2,
-                    "descripcion": "VARCHAR",
-                    "sinonimo": "text"
-                },
-                "cantidadCaracteresCampo": 100,
-                "tipoSeleccionId": {
-                    "tipoSeleccionId": 2,
-                    "descripcion": "Múltiple"
-                },
-                "campoURL": null,
-                "nombreDocumento": null,
-                "extension": null
-              },
-              {
-                "campoId": 31,
-                "nombre": "documento",
-                "descripcion": "Nombre Usuario",
-                "label": "Documento",
-                "tipoCampoId": {
-                    "tipoCampoId": 3,
-                    "descripcion": "Documento"
-                },
-                "placeholder": null,
-                "value": "",
-                "icon": null,
-                "click": null,
-                "items": "TipoIdentificacion",
-                "objToDisplay": "",
-                "help": null,
-                "time": null, 
-                "orden": null,
-                "tipoDatoId": {
-                    "tipoDatoId": 2,
-                    "descripcion": "VARCHAR",
-                    "sinonimo": "VARCHAR"
-                },
-                "cantidadCaracteresCampo": 100,
-                "tipoSeleccionId": {
-                    "tipoSeleccionId": 2,
-                    "descripcion": "Múltiple"
-                },
-                "campoURL": null,
-                "nombreDocumento": null,
-                "extension": null
-              }
-              ,
-              {
-                    "campoId": 32,
-                    "nombre": "Cedula",
-                    "descripcion": "Cedula del Solicitante",
-                    "label": "Nombre Label",
+                {
+                    "campoId": 202,
+                    "nombre": "producto",
+                    "descripcion": "producto",
+                    "label": "Producto",
                     "tipoCampoId": {
-                        "tipoCampoId": 5,
-                        "descripcion": "Checkbox"
+                        "tipoCampoId": 4,
+                        "descripcion": "Radio Button"
                     },
-                    "placeholder": null,
-                    "value": null,
-                    "icon": null,
+                    "placeholder": "Producto",
+                    "value": "",
+                    "icon": "",
                     "click": null,
-                    "items": "TipoIdentificacion",
-                    "objToDisplay": "",
-                    "help": null,
-                    "time": null, 
-                    "orden": null,
+                    "items": "TMTipoCatalogo",
+                    "objToDisplay": "descripcion",
+                    "help": "Por favor indique el producto",
+                    "time": "",
+                    "orden": 0,
                     "tipoDatoId": {
-                        "tipoDatoId": 2,
-                        "descripcion": "VARCHAR",
-                        "sinonimo": "VARCHAR"
+                        "tipoDatoId": 1,
+                        "descripcion": "INT",
+                        "sinonimo": "INT"
                     },
                     "cantidadCaracteresCampo": 100,
-                    "tipoSeleccionId": {
-                        "tipoSeleccionId": 2,
-                        "descripcion": "Múltiple"
-                    },
-                    "campoURL": null,
-                    "nombreDocumento": null,
-                    "extension": null,
+                    "tipoSeleccionId": null,
+                    "campoURL": "",
+                    "nombreDocumento": "",
+                    "extension": "",
                     "tablaMaestra": {
-                        "nombreTabla": "TipoIdentificacion",
+                        "nombreTabla": "TMTipoCatalogo",
                         "activo": true,
-                        "descripcion": "Tipo de Identificación",
+                        "descripcion": "Tipo Catalogo de productos del banco",
                         "camposTablaMaestra": null,
                         "lstValoresTablaMaestra": null,
                         "lstRegValoresTablaMaestraDTO": [{
                                 "id": 1,
-                                "codigo": "cedula",
+                                "codigo": "VN",
+                                "descripcion": "Vivienda Nueva",
+                                "activo": true,
+                                "tramiteId": 1
+                            }, {
+                                "id": 2,
+                                "codigo": "VU",
+                                "descripcion": "Vivienda Usada",
+                                "activo": true,
+                                "tramiteId": 1
+                            }
+                        ],
+                    }
+                }, {
+                    "campoId": 203,
+                    "nombre": "precioVenta",
+                    "descripcion": "Precio de Venta del Inmueble",
+                    "label": "Precio de Venta",
+                    "tipoCampoId": {
+                        "tipoCampoId": 1,
+                        "descripcion": "Input"
+                    },
+                    "placeholder": "Precio de Venta",
+                    "value": "",
+                    "icon": "",
+                    "click": null,
+                    "items": "",
+                    "objToDisplay": "",
+                    "help": "Por favor indique el Precio de Venta",
+                    "time": "",
+                    "orden": 1,
+                    "tipoDatoId": {
+                        "tipoDatoId": 6,
+                        "descripcion": "FLOAT",
+                        "sinonimo": "number"
+                    },
+                    "cantidadCaracteresCampo": 10,
+                    "tipoSeleccionId": null,
+                    "campoURL": "",
+                    "nombreDocumento": "",
+                    "extension": "",
+                    "tablaMaestra": null
+                }, {
+                    "campoId": 204,
+                    "nombre": "anosFinanciamiento",
+                    "descripcion": "Años de Financiamiento",
+                    "label": "Años de Financiamiento",
+                    "tipoCampoId": {
+                        "tipoCampoId": 1,
+                        "descripcion": "Input"
+                    },
+                    "placeholder": "Años de Financiamiento",
+                    "value": "",
+                    "icon": "",
+                    "click": null,
+                    "items": "",
+                    "objToDisplay": "",
+                    "help": "",
+                    "time": "",
+                    "orden": 2,
+                    "tipoDatoId": {
+                        "tipoDatoId": 1,
+                        "descripcion": "INT",
+                        "sinonimo": "number"
+                    },
+                    "cantidadCaracteresCampo": 10,
+                    "tipoSeleccionId": null,
+                    "campoURL": "",
+                    "nombreDocumento": "",
+                    "extension": "",
+                    "tablaMaestra": null
+                }, {
+                    "campoId": 205,
+                    "nombre": "abono",
+                    "descripcion": "Abono",
+                    "label": "Abono",
+                    "tipoCampoId": {
+                        "tipoCampoId": 1,
+                        "descripcion": "Input"
+                    },
+                    "placeholder": "Abono",
+                    "value": "",
+                    "icon": "",
+                    "click": null,
+                    "items": "",
+                    "objToDisplay": "",
+                    "help": "",
+                    "time": "",
+                    "orden": 3,
+                    "tipoDatoId": {
+                        "tipoDatoId": 6,
+                        "descripcion": "FLOAT",
+                        "sinonimo": "FLOAT"
+                    },
+                    "cantidadCaracteresCampo": 10,
+                    "tipoSeleccionId": null,
+                    "campoURL": "",
+                    "nombreDocumento": "",
+                    "extension": "",
+                    "tablaMaestra": null
+                }
+            ],
+            "lstCampos": null
+        }, {
+            "bloqueId": 82,
+            "nombre": "Datos Personales",
+            "nombreTabla": "DatosPersonales",
+            "lstCamposDTO": [{
+                    "campoId": 206,
+                    "nombre": "TipoIdentificacion",
+                    "descripcion": "Tipo de Identificación",
+                    "label": "Tipo de Identificación",
+                    "tipoCampoId": {
+                        "tipoCampoId": 4,
+                        "descripcion": "Radio Button"
+                    },
+                    "placeholder": "Tipo de Identificación",
+                    "value": "",
+                    "icon": "",
+                    "click": null,
+                    "items": "TMTipoIdentificacion",
+                    "objToDisplay": "descripcion",
+                    "help": "",
+                    "time": "",
+                    "orden": 0,
+                    "tipoDatoId": {
+                        "tipoDatoId": 1,
+                        "descripcion": "INT",
+                        "sinonimo": "INT"
+                    },
+                    "cantidadCaracteresCampo": 100,
+                    "tipoSeleccionId": null,
+                    "campoURL": "",
+                    "nombreDocumento": "",
+                    "extension": "",
+                    "tablaMaestra": {
+                        "nombreTabla": "TMTipoIdentificacion",
+                        "activo": true,
+                        "descripcion": "Tipo Identificación",
+                        "camposTablaMaestra": null,
+                        "lstValoresTablaMaestra": null,
+                        "lstRegValoresTablaMaestraDTO": [{
+                                "id": 1,
+                                "codigo": "C",
                                 "descripcion": "Cédula",
                                 "activo": true,
                                 "tramiteId": 1
                             }, {
                                 "id": 2,
-                                "codigo": "pasaporte",
+                                "codigo": "P",
                                 "descripcion": "Pasaporte",
                                 "activo": true,
                                 "tramiteId": 1
                             }
                         ],
                     }
-                }
-                ,
-                {
-                    "campoId": 33,
-                    "nombre": "ciudad",
-                    "descripcion": "Ciudad actual",
-                    "label": "Ciudad",
+                }, {
+                    "campoId": 207,
+                    "nombre": "numeroIdentificacion",
+                    "descripcion": "Número de Documento de Identidad Personal",
+                    "label": "Número de Documento de Identidad Personal",
                     "tipoCampoId": {
-                        "tipoCampoId": 2,
-                        "descripcion": "Select"
+                        "tipoCampoId": 1,
+                        "descripcion": "Input"
                     },
-                    "placeholder": null,
-                    "value": "10005", //el value va la opcion predeterminada
-                    "icon": null,
+                    "placeholder": "Número de Documento de Identidad Personal",
+                    "value": "",
+                    "icon": "",
                     "click": null,
                     "items": "",
                     "objToDisplay": "",
-                    "help": null,
-                    "time": null, 
-                    "orden": null,
+                    "help": "",
+                    "time": "",
+                    "orden": 1,
                     "tipoDatoId": {
                         "tipoDatoId": 2,
                         "descripcion": "VARCHAR",
                         "sinonimo": "VARCHAR"
                     },
                     "cantidadCaracteresCampo": 100,
-                    "tipoSeleccionId": {
-                        "tipoSeleccionId": 2,
-                        "descripcion": "Múltiple"
+                    "tipoSeleccionId": null,
+                    "campoURL": "",
+                    "nombreDocumento": "",
+                    "extension": "",
+                    "tablaMaestra": null
+                }, {
+                    "campoId": 208,
+                    "nombre": "sexo",
+                    "descripcion": "Sexo",
+                    "label": "Sexo",
+                    "tipoCampoId": {
+                        "tipoCampoId": 4,
+                        "descripcion": "Radio Button"
                     },
-                    "campoURL": null,
-                    "nombreDocumento": null,
-                    "extension": null,
+                    "placeholder": "Sexo",
+                    "value": "",
+                    "icon": "",
+                    "click": null,
+                    "items": "TMGenero",
+                    "objToDisplay": "descripcion",
+                    "help": "",
+                    "time": "",
+                    "orden": 2,
+                    "tipoDatoId": {
+                        "tipoDatoId": 1,
+                        "descripcion": "INT",
+                        "sinonimo": "INT"
+                    },
+                    "cantidadCaracteresCampo": 10,
+                    "tipoSeleccionId": null,
+                    "campoURL": "",
+                    "nombreDocumento": "",
+                    "extension": "",
                     "tablaMaestra": {
-                        "nombreTabla": "TipoIdentificacion",
+                        "nombreTabla": "TMGenero",
                         "activo": true,
-                        "descripcion": "Tipo de Identificación",
+                        "descripcion": "Genero",
                         "camposTablaMaestra": null,
                         "lstValoresTablaMaestra": null,
                         "lstRegValoresTablaMaestraDTO": [{
                                 "id": 1,
-                                "codigo": "10001",
-                                "descripcion": "Bogota",
+                                "codigo": "M",
+                                "descripcion": "Masculino",
                                 "activo": true,
                                 "tramiteId": 1
                             }, {
                                 "id": 2,
-                                "codigo": "10005",
-                                "descripcion": "Cali",
+                                "codigo": "F",
+                                "descripcion": "Femenino",
                                 "activo": true,
                                 "tramiteId": 1
                             }
                         ],
                     }
+                }, {
+                    "campoId": 209,
+                    "nombre": "estadoCivil",
+                    "descripcion": "Estado Civil",
+                    "label": "Estado Civil",
+                    "tipoCampoId": {
+                        "tipoCampoId": 4,
+                        "descripcion": "Radio Button"
+                    },
+                    "placeholder": "Estado Civil",
+                    "value": "",
+                    "icon": "",
+                    "click": null,
+                    "items": "TMEstadoCivil",
+                    "objToDisplay": "descripcion",
+                    "help": "",
+                    "time": "",
+                    "orden": 3,
+                    "tipoDatoId": {
+                        "tipoDatoId": 1,
+                        "descripcion": "INT",
+                        "sinonimo": "INT"
+                    },
+                    "cantidadCaracteresCampo": 10,
+                    "tipoSeleccionId": null,
+                    "campoURL": "",
+                    "nombreDocumento": "",
+                    "extension": "",
+                    "tablaMaestra": {
+                        "nombreTabla": "TMEstadoCivil",
+                        "activo": true,
+                        "descripcion": "Estado Civil",
+                        "camposTablaMaestra": null,
+                        "lstValoresTablaMaestra": null,
+                        "lstRegValoresTablaMaestraDTO": [{
+                                "id": 1,
+                                "codigo": "S",
+                                "descripcion": "Soltero (a)",
+                                "activo": true,
+                                "tramiteId": 1
+                            }, {
+                                "id": 2,
+                                "codigo": "C",
+                                "descripcion": "Casado (a)",
+                                "activo": true,
+                                "tramiteId": 1
+                            }, {
+                                "id": 3,
+                                "codigo": "D",
+                                "descripcion": "Divorciado (a)",
+                                "activo": true,
+                                "tramiteId": 1
+                            }, {
+                                "id": 4,
+                                "codigo": "V",
+                                "descripcion": "Viudo (a)",
+                                "activo": true,
+                                "tramiteId": 1
+                            }
+                        ],
+                    }
+                }, {
+                    "campoId": 210,
+                    "nombre": "primerNombre",
+                    "descripcion": "Primer Nombre",
+                    "label": "Primer Nombre",
+                    "tipoCampoId": {
+                        "tipoCampoId": 1,
+                        "descripcion": "Input"
+                    },
+                    "placeholder": "Primer Nombre",
+                    "value": "",
+                    "icon": "",
+                    "click": null,
+                    "items": "",
+                    "objToDisplay": "",
+                    "help": "",
+                    "time": "",
+                    "orden": 4,
+                    "tipoDatoId": {
+                        "tipoDatoId": 2,
+                        "descripcion": "VARCHAR",
+                        "sinonimo": "VARCHAR"
+                    },
+                    "cantidadCaracteresCampo": 100,
+                    "tipoSeleccionId": null,
+                    "campoURL": "",
+                    "nombreDocumento": "",
+                    "extension": "",
+                    "tablaMaestra": null
+                }, {
+                    "campoId": 211,
+                    "nombre": "primerApellido",
+                    "descripcion": "Primer Apellido",
+                    "label": "Primer Apellido",
+                    "tipoCampoId": {
+                        "tipoCampoId": 1,
+                        "descripcion": "Input"
+                    },
+                    "placeholder": "Primer Apellido",
+                    "value": "",
+                    "icon": "",
+                    "click": null,
+                    "items": "",
+                    "objToDisplay": "",
+                    "help": "",
+                    "time": "",
+                    "orden": 5,
+                    "tipoDatoId": {
+                        "tipoDatoId": 2,
+                        "descripcion": "VARCHAR",
+                        "sinonimo": "VARCHAR"
+                    },
+                    "cantidadCaracteresCampo": 100,
+                    "tipoSeleccionId": null,
+                    "campoURL": "",
+                    "nombreDocumento": "",
+                    "extension": "",
+                    "tablaMaestra": null
+                }, {
+                    "campoId": 212,
+                    "nombre": "apellidoCasada",
+                    "descripcion": "Apellido de Casada",
+                    "label": "Apellido de Casada",
+                    "tipoCampoId": {
+                        "tipoCampoId": 1,
+                        "descripcion": "Input"
+                    },
+                    "placeholder": "Apellido de Casada",
+                    "value": "",
+                    "icon": "",
+                    "click": null,
+                    "items": "",
+                    "objToDisplay": "",
+                    "help": "",
+                    "time": "",
+                    "orden": 6,
+                    "tipoDatoId": {
+                        "tipoDatoId": 2,
+                        "descripcion": "VARCHAR",
+                        "sinonimo": "VARCHAR"
+                    },
+                    "cantidadCaracteresCampo": 100,
+                    "tipoSeleccionId": null,
+                    "campoURL": "",
+                    "nombreDocumento": "",
+                    "extension": "",
+                    "tablaMaestra": null
+                }, {
+                    "campoId": 213,
+                    "nombre": "fechaNacimiento",
+                    "descripcion": "Fecha de Nacimiento",
+                    "label": "Fecha de Nacimiento",
+                    "tipoCampoId": {
+                        "tipoCampoId": 6,
+                        "descripcion": "Datapicker"
+                    },
+                    "placeholder": "Fecha de Nacimiento",
+                    "value": "",
+                    "icon": "",
+                    "click": null,
+                    "items": "",
+                    "objToDisplay": "",
+                    "help": "",
+                    "time": "",
+                    "orden": 7,
+                    "tipoDatoId": {
+                        "tipoDatoId": 4,
+                        "descripcion": "DATETIME",
+                        "sinonimo": "date"
+                    },
+                    "cantidadCaracteresCampo": 6,
+                    "tipoSeleccionId": null,
+                    "campoURL": "",
+                    "nombreDocumento": "",
+                    "extension": "",
+                    "tablaMaestra": null
+                }, {
+                    "campoId": 214,
+                    "nombre": "telefonoResidencial",
+                    "descripcion": "Teléfono Residencial",
+                    "label": "Teléfono Residencial",
+                    "tipoCampoId": {
+                        "tipoCampoId": 9,
+                        "descripcion": "Telefono"
+                    },
+                    "placeholder": "Teléfono Residencial",
+                    "value": "",
+                    "icon": "",
+                    "click": null,
+                    "items": "",
+                    "objToDisplay": "",
+                    "help": "",
+                    "time": "",
+                    "orden": 8,
+                    "tipoDatoId": {
+                        "tipoDatoId": 2,
+                        "descripcion": "VARCHAR",
+                        "sinonimo": "VARCHAR"
+                    },
+                    "cantidadCaracteresCampo": 100,
+                    "tipoSeleccionId": null,
+                    "campoURL": "",
+                    "nombreDocumento": "",
+                    "extension": "",
+                    "tablaMaestra": null
+                }, {
+                    "campoId": 215,
+                    "nombre": "telefonoOficina",
+                    "descripcion": "Teléfono Oficina",
+                    "label": "Teléfono Oficina",
+                    "tipoCampoId": {
+                        "tipoCampoId": 9,
+                        "descripcion": "Telefono"
+                    },
+                    "placeholder": "Teléfono Oficina",
+                    "value": "",
+                    "icon": "",
+                    "click": null,
+                    "items": "",
+                    "objToDisplay": "",
+                    "help": "",
+                    "time": "",
+                    "orden": 9,
+                    "tipoDatoId": {
+                        "tipoDatoId": 2,
+                        "descripcion": "VARCHAR",
+                        "sinonimo": "VARCHAR"
+                    },
+                    "cantidadCaracteresCampo": 100,
+                    "tipoSeleccionId": null,
+                    "campoURL": "",
+                    "nombreDocumento": "",
+                    "extension": "",
+                    "tablaMaestra": null
+                }, {
+                    "campoId": 216,
+                    "nombre": "telefonoPersonal",
+                    "descripcion": "Teléfono Personal",
+                    "label": "Teléfono Personal",
+                    "tipoCampoId": {
+                        "tipoCampoId": 9,
+                        "descripcion": "Telefono"
+                    },
+                    "placeholder": "Teléfono Personal",
+                    "value": "",
+                    "icon": "",
+                    "click": null,
+                    "items": "",
+                    "objToDisplay": "",
+                    "help": "",
+                    "time": "",
+                    "orden": 10,
+                    "tipoDatoId": {
+                        "tipoDatoId": 2,
+                        "descripcion": "VARCHAR",
+                        "sinonimo": "VARCHAR"
+                    },
+                    "cantidadCaracteresCampo": 100,
+                    "tipoSeleccionId": null,
+                    "campoURL": "",
+                    "nombreDocumento": "",
+                    "extension": "",
+                    "tablaMaestra": null
+                }, {
+                    "campoId": 217,
+                    "nombre": "telefonoFamiliar",
+                    "descripcion": "Teléfono Familiar",
+                    "label": "Teléfono Familiar",
+                    "tipoCampoId": {
+                        "tipoCampoId": 9,
+                        "descripcion": "Telefono"
+                    },
+                    "placeholder": "Teléfono Familiar",
+                    "value": "",
+                    "icon": "",
+                    "click": null,
+                    "items": "",
+                    "objToDisplay": "",
+                    "help": "",
+                    "time": "",
+                    "orden": 11,
+                    "tipoDatoId": {
+                        "tipoDatoId": 2,
+                        "descripcion": "VARCHAR",
+                        "sinonimo": "VARCHAR"
+                    },
+                    "cantidadCaracteresCampo": 100,
+                    "tipoSeleccionId": null,
+                    "campoURL": "",
+                    "nombreDocumento": "",
+                    "extension": "",
+                    "tablaMaestra": null
+                }, {
+                    "campoId": 218,
+                    "nombre": "correoElectronicoPrincipal",
+                    "descripcion": "Correo Electrónico Principal",
+                    "label": "Correo Electrónico Principal",
+                    "tipoCampoId": {
+                        "tipoCampoId": 1,
+                        "descripcion": "Input"
+                    },
+                    "placeholder": "Correo Electrónico Principal",
+                    "value": "",
+                    "icon": "",
+                    "click": null,
+                    "items": "",
+                    "objToDisplay": "",
+                    "help": "",
+                    "time": "",
+                    "orden": 12,
+                    "tipoDatoId": {
+                        "tipoDatoId": 2,
+                        "descripcion": "VARCHAR",
+                        "sinonimo": "VARCHAR"
+                    },
+                    "cantidadCaracteresCampo": 100,
+                    "tipoSeleccionId": null,
+                    "campoURL": "",
+                    "nombreDocumento": "",
+                    "extension": "",
+                    "tablaMaestra": null
+                }, {
+                    "campoId": 219,
+                    "nombre": "correoElectronicoSecundario",
+                    "descripcion": "Correo Electrónico Secundario",
+                    "label": "Correo Electrónico Secundario",
+                    "tipoCampoId": {
+                        "tipoCampoId": 1,
+                        "descripcion": "Input"
+                    },
+                    "placeholder": "Correo Electrónico Secundario",
+                    "value": "",
+                    "icon": "",
+                    "click": null,
+                    "items": "",
+                    "objToDisplay": "",
+                    "help": "",
+                    "time": "",
+                    "orden": 13,
+                    "tipoDatoId": {
+                        "tipoDatoId": 2,
+                        "descripcion": "VARCHAR",
+                        "sinonimo": "VARCHAR"
+                    },
+                    "cantidadCaracteresCampo": 100,
+                    "tipoSeleccionId": null,
+                    "campoURL": "",
+                    "nombreDocumento": "",
+                    "extension": "",
+                    "tablaMaestra": null
                 }
-                ,
-                {
-                  "campoId": 33,
-                  "nombre": "estadiCivil",
-                  "descripcion": "Estadi Civil",
-                  "label": "Estadi Civil",
-                  "tipoCampoId": {
-                      "tipoCampoId": 4,
-                      "descripcion": "Radio Button"
-                  },
-                  "placeholder": null,
-                  "value": "casado",
-                  "icon": null,
-                  "click": null,
-                  "items": "",
-                  "objToDisplay": "",
-                  "help": null,
-                  "time": null, 
-                  "orden": null,
-                  "tipoDatoId": {
-                      "tipoDatoId": 2,
-                      "descripcion": "VARCHAR",
-                      "sinonimo": "VARCHAR"
-                  },
-                  "cantidadCaracteresCampo": 100,
-                  "tipoSeleccionId": {
-                      "tipoSeleccionId": 2,
-                      "descripcion": "Múltiple"
-                  },
-                  "campoURL": null,
-                  "nombreDocumento": null,
-                  "extension": null,
-                  "tablaMaestra": {
-                      "nombreTabla": "TipoIdentificacion",
-                      "activo": true,
-                      "descripcion": "Tipo de Identificación",
-                      "camposTablaMaestra": null,
-                      "lstValoresTablaMaestra": null,
-                      "lstRegValoresTablaMaestraDTO": [{
-                              "id": 1,
-                              "codigo": "casado",
-                              "descripcion": "Casado",
-                              "activo": true,
-                              "tramiteId": 1
-                          }, {
-                              "id": 2,
-                              "codigo": "soltero",
-                              "descripcion": "Soltero",
-                              "activo": true,
-                              "tramiteId": 1
-                          }
-                      ],
-                  }
-              }
             ],
             "lstCampos": null
         }
     ],
 };
+
 
   constructor() {
     console.log('servicio listo para usar');

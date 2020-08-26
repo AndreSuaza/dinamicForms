@@ -9,17 +9,19 @@ import { FieldsService } from '../services/fields.service';
 export class ConstruccionComponent {
 
   form: FormGroup;
-
   fields = [];
-  formData;
-
+  formData: any;
 
   constructor( 
     private _fields : FieldsService
     ,private _builder: FormBuilder ) { 
 
       this.formData = this._fields.getFields();
-      this.fields = this.formData.lstBloques[0].lstCamposDTO;
+      this.formData.lstBloques.forEach( bloque => {
+          bloque.lstCamposDTO.forEach( field => {
+            this.fields.push(field);
+          });
+      });
       this. generateObjetFrom();
 
   }
@@ -40,12 +42,11 @@ export class ConstruccionComponent {
           });
 
         });
-        console.log('Entra');
 
       } else {
 
         Object.defineProperty(objForm,field.nombre,{
-          value:[field.value, Validators.required], 
+          value:[field.value], 
           writable : true,
           enumerable : true
         });
@@ -53,7 +54,7 @@ export class ConstruccionComponent {
       }
 
     });
-    console.log('generateObjetFrom', objForm)
+
     this.form = this._builder.group(objForm);
   }
 
@@ -72,11 +73,8 @@ export class ConstruccionComponent {
         var keyValue = condition.split("=");
         
         if(this.form.get(keyValue[0]).value == keyValue[1]) {
-          console.log('entra',this.form.get(keyValue[0]).value,keyValue[1]);
           response =  true;
         }
-
-        console.log(keyValue);
 
       });
 
@@ -90,27 +88,27 @@ export class ConstruccionComponent {
   searchField(idField) {
 
     var fieldFound = null;
-
     this.fields.forEach(field => {
-
       if(field.campoId == idField) { fieldFound = field;}
-
     });
-
     return fieldFound;
 
   }
 
-  validate(nameFormControl) {
+  invalidate(nameFormControl:any) {
     
+    var responseValidare = {"value": false, "message": "h" };
+
     if(this.form.get(nameFormControl).touched) {
 
       if(this.form.get(nameFormControl).hasError('required')){
-        return 'Esta campo es requerido';
+        responseValidare.value = true;
+        responseValidare.message = 'Esta campo es requerido';
+        
       }
 
     }
-    
+    return responseValidare; 
   }
 
   enviar(values){
