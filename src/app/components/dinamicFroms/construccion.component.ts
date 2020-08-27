@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
-import { FieldsService } from '../services/fields.service';
+import { FieldsService } from '../../services/fields.service';
 
 @Component({
   selector: 'app-construccion',
