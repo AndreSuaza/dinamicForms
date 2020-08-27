@@ -1,2 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~bootstrap/dist/css/bootstrap.css";
+@import "./assets/plugins/global/plugins.bundle.css";
+@import "./assets/css/style.bundle.css";
+@import "./assets/css/tempestiva.css";
+
+.show{
+
+    display: block;
+
+}
+
+.maginField {
+    margin-bottom: 1.75rem;
+}
