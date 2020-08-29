@@ -10,7 +10,6 @@ import { ConstruccionComponent } from './components/dinamicFroms/construccion.co
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
 
-import { TestComponent } from './test/test.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './components/pages/home/home.component';
 import { HeaderComponent } from './components/pages/header/header.component';
@@ -23,7 +22,6 @@ import { LoginComponent } from './components/pages/login/login.component';
   declarations: [
     AppComponent,
     ConstruccionComponent,
-    TestComponent,
     HomeComponent,
     HeaderComponent,
     BreadcrumbsComponent,
