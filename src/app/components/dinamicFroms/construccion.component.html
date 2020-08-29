@@ -10,7 +10,7 @@
         <div class="card-body">
             <div class="form-group row">
                 <div *ngFor="let field of fields" class="col-lg-6">
-                    <div class="maginField" *ngIf="field.tipoCampoId.tipoCampoId == 1">
+                    <div class="maginField" *ngIf="field.tipoCampoId.tipoCampoId == 1 && validateConditionField(field.campoId)">
                         <label>{{ field.label }}</label>
                         <input  
                             id="{{ field.campoId }}"
@@ -24,7 +24,7 @@
                         <span *ngIf="invalidate(field.nombre).value" class="form-text text-danger" >{{ invalidate(field.nombre).message }}</span>
                     </div>
                 
-                    <div class="maginField" *ngIf="field.tipoCampoId.tipoCampoId == 2">
+                    <div class="maginField" *ngIf="field.tipoCampoId.tipoCampoId == 2 && validateConditionField(field.campoId)">
                         <label class="form-check-label">{{ field.label }}</label>
                         <select 
                             id="{{ field.campoId }}"
@@ -44,7 +44,7 @@
                         <div *ngIf="invalidate(field.nombre).value" class="invalid-feedback show" >{{ invalidate(field.nombre).message }}</div> 
                     </div>
             
-                    <div *ngIf="field.tipoCampoId.tipoCampoId == 3">
+                    <div class="maginField" *ngIf="field.tipoCampoId.tipoCampoId == 3 && validateConditionField(field.campoId)">
                     <label>{{ field.label }}</label>
                     <input 
                         type="file" 
@@ -55,7 +55,7 @@
                     <div *ngIf="invalidate(field.nombre).value" class="invalid-feedback show" >{{ invalidate(field.nombre).message }}</div>
                     </div>
 
-                    <div class="maginField" *ngIf="field.tipoCampoId.tipoCampoId == 4">
+                    <div class="maginField" *ngIf="field.tipoCampoId.tipoCampoId == 4 && validateConditionField(field.campoId)">
                         <label>{{ field.label }}</label>
                         <div class="radio-inline">
                             <label 
@@ -65,7 +65,7 @@
                                 <input 
                                     type="radio" 
                                     name="{{ field.nombre }}" 
-                                    value="{{ radio.codigo }}" 
+                                    value="{{ radio.descripcion }}" 
                                     formControlName="{{ field.nombre }}"
                                 >    
                                 <span></span>
@@ -76,7 +76,7 @@
                         <span *ngIf="invalidate(field.nombre).value" class="form-text text-danger" >{{ invalidate(field.nombre).message }}</span>    
                     </div>
                     
-                    <div *ngIf="field.tipoCampoId.tipoCampoId == 5">
+                    <div *ngIf="field.tipoCampoId.tipoCampoId == 5 && validateConditionField(field.campoId)">
                     <label>{{ field.label }}</label>
                     <div 
                         *ngFor="let check of field.tablaMaestra.lstRegValoresTablaMaestraDTO" 
@@ -95,9 +95,7 @@
                     </div>
                     </div>
 
-                    <div 
-                    class="maginField"
-                    *ngIf="field.tipoCampoId.tipoCampoId == 6">
+                    <div class="maginField" *ngIf="field.tipoCampoId.tipoCampoId == 6 && validateConditionField(field.campoId)">
                         <label>{{ field.label }}</label>
                         <input  
                             id="{{ field.campoId }}"
@@ -116,7 +114,7 @@
         <div class="card-footer">
             <div class="row">
                 <div class="col-lg-6">
-                    <input  type="submit"  class="btn btn-primary" value="enviar">
+                    <input type="submit" class="btn btn-primary">
                 </div>
             </div>
         </div>

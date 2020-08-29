@@ -337,24 +337,24 @@ export class ValidationFieldsService {
     "campoId": 30
 }, {
     "reglaValidacionId": 31,
-    "requerido": "producto='Vivienda Usada'",
+    "requerido": "producto=Vivienda Usada",
     "maxCaracter": null,
     "minCaracter": null,
     "maxFecha": null,
     "minFecha": null,
     "expresionRegular": null,
-    "visible": "producto='Vivienda Usada'",
+    "visible": "producto=Vivienda Usada",
     "deshabilitado": null,
     "campoId": 31
 }, {
     "reglaValidacionId": 32,
-    "requerido": "producto='Vivienda Nueva'",
+    "requerido": "producto=Vivienda Nueva",
     "maxCaracter": null,
     "minCaracter": null,
     "maxFecha": null,
     "minFecha": null,
     "expresionRegular": null,
-    "visible": "producto='Vivienda Nueva'",
+    "visible": "producto=Vivienda Nueva",
     "deshabilitado": null,
     "campoId": 32
 }, {

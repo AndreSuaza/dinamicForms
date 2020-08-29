@@ -13,6 +13,7 @@ export class ConstruccionComponent {
   fields = [];
   validations = [];
   formData: any;
+  invalid = false;
 
   constructor( 
     private _fields : FieldsService
@@ -98,21 +99,30 @@ export class ConstruccionComponent {
 
   }
 
-  validateConditionField( condition ) {
-
-      var conditions = condition.split("AND");
-      
+  validateConditionField( idField ) {
+      var validation:any = this.searchValidation(idField);
       var response = true;
-      console.log(this.form.get('producto').value);
-      conditions.forEach(condition => {
-        
-        var keyValue = condition.split("=");
-        
-        // if(this.form.get(keyValue[0].trim()).value != keyValue[1].trim()) {
-        //   response =  false;
-        // }
+      if(validation.visible !=  null) {
+        var conditions = validation.visible.split("AND");
+        conditions.forEach(condition => {
+          
+          var keyValue = condition.split("=");
+          if(this.form.get(keyValue[0].trim()).value != keyValue[1].trim()) {
+            response =  false;
+          }
 
-      });
+        });
+      }
+      
+      if(validation.visible == validation.requerido && response) {
+        var field = this.searchField(idField);
+        if(response) {
+          this.form.get(field.nombre).setValidators(Validators.required);
+        }else {
+          this.form.get(field.nombre).clearValidators();
+          this.form.get(field.nombre).setValidators(this.constructionValidations( idField ));
+        }   
+      }
 
       return response;
 
@@ -146,7 +156,8 @@ export class ConstruccionComponent {
   invalidate(nameFormControl:any) {
     
     var responseValidare = {"value": false, "message": "" };
-    if(this.form.get(nameFormControl).touched) {
+    if(this.form.get(nameFormControl).touched || this.invalid ) {
+
       if(this.form.get(nameFormControl).hasError('required')){
         responseValidare.value = true;
         responseValidare.message = 'Esta campo es requerido';
@@ -157,7 +168,12 @@ export class ConstruccionComponent {
   }
 
   enviar(values){
-    console.log(values);
+    if( this.form.invalid == true ) {
+      this.invalid = true;
+    } else {
+      console.log(values);
+    }
+    
   }
 
 }
