@@ -1,0 +1,381 @@
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ValidationFieldsService {
+
+  validations = [{
+    "reglaValidacionId": 1,
+    "requerido": "true",
+    "maxCaracter": null,
+    "minCaracter": null,
+    "maxFecha": null,
+    "minFecha": null,
+    "expresionRegular": null,
+    "visible": null,
+    "deshabilitado": null,
+    "campoId": 1
+}, {
+    "reglaValidacionId": 2,
+    "requerido": "true",
+    "maxCaracter": null,
+    "minCaracter": null,
+    "maxFecha": null,
+    "minFecha": null,
+    "expresionRegular": null,
+    "visible": null,
+    "deshabilitado": null,
+    "campoId": 2
+}, {
+    "reglaValidacionId": 3,
+    "requerido": "true",
+    "maxCaracter": null,
+    "minCaracter": null,
+    "maxFecha": null,
+    "minFecha": null,
+    "expresionRegular": null,
+    "visible": null,
+    "deshabilitado": null,
+    "campoId": 3
+}, {
+    "reglaValidacionId": 4,
+    "requerido": "true",
+    "maxCaracter": null,
+    "minCaracter": null,
+    "maxFecha": null,
+    "minFecha": null,
+    "expresionRegular": null,
+    "visible": null,
+    "deshabilitado": null,
+    "campoId": 4
+}, {
+    "reglaValidacionId": 5,
+    "requerido": "true",
+    "maxCaracter": null,
+    "minCaracter": null,
+    "maxFecha": null,
+    "minFecha": null,
+    "expresionRegular": null,
+    "visible": null,
+    "deshabilitado": null,
+    "campoId": 5
+}, {
+    "reglaValidacionId": 6,
+    "requerido": "true",
+    "maxCaracter": null,
+    "minCaracter": null,
+    "maxFecha": null,
+    "minFecha": null,
+    "expresionRegular": null,
+    "visible": null,
+    "deshabilitado": null,
+    "campoId": 6
+}, {
+    "reglaValidacionId": 7,
+    "requerido": "true",
+    "maxCaracter": null,
+    "minCaracter": null,
+    "maxFecha": null,
+    "minFecha": null,
+    "expresionRegular": null,
+    "visible": null,
+    "deshabilitado": null,
+    "campoId": 7
+}, {
+    "reglaValidacionId": 8,
+    "requerido": "true",
+    "maxCaracter": null,
+    "minCaracter": null,
+    "maxFecha": null,
+    "minFecha": null,
+    "expresionRegular": null,
+    "visible": null,
+    "deshabilitado": null,
+    "campoId": 8
+}, {
+    "reglaValidacionId": 9,
+    "requerido": "true",
+    "maxCaracter": null,
+    "minCaracter": null,
+    "maxFecha": null,
+    "minFecha": null,
+    "expresionRegular": null,
+    "visible": null,
+    "deshabilitado": null,
+    "campoId": 9
+}, {
+    "reglaValidacionId": 10,
+    "requerido": "true",
+    "maxCaracter": null,
+    "minCaracter": null,
+    "maxFecha": null,
+    "minFecha": null,
+    "expresionRegular": null,
+    "visible": null,
+    "deshabilitado": null,
+    "campoId": 10
+}, {
+    "reglaValidacionId": 11,
+    "requerido": "sexo='F' AND estadoCivil='Casado(a)'",
+    "maxCaracter": null,
+    "minCaracter": null,
+    "maxFecha": null,
+    "minFecha": null,
+    "expresionRegular": null,
+    "visible": null,
+    "deshabilitado": null,
+    "campoId": 11
+}, {
+    "reglaValidacionId": 12,
+    "requerido": "true",
+    "maxCaracter": null,
+    "minCaracter": null,
+    "maxFecha": null,
+    "minFecha": null,
+    "expresionRegular": null,
+    "visible": null,
+    "deshabilitado": null,
+    "campoId": 12
+}, {
+    "reglaValidacionId": 13,
+    "requerido": "false",
+    "maxCaracter": 7,
+    "minCaracter": null,
+    "maxFecha": null,
+    "minFecha": null,
+    "expresionRegular": null,
+    "visible": null,
+    "deshabilitado": null,
+    "campoId": 13
+}, {
+    "reglaValidacionId": 14,
+    "requerido": "false",
+    "maxCaracter": 7,
+    "minCaracter": null,
+    "maxFecha": null,
+    "minFecha": null,
+    "expresionRegular": null,
+    "visible": null,
+    "deshabilitado": null,
+    "campoId": 14
+}, {
+    "reglaValidacionId": 15,
+    "requerido": "true",
+    "maxCaracter": 8,
+    "minCaracter": null,
+    "maxFecha": null,
+    "minFecha": null,
+    "expresionRegular": null,
+    "visible": null,
+    "deshabilitado": null,
+    "campoId": 15
+}, {
+    "reglaValidacionId": 16,
+    "requerido": "false",
+    "maxCaracter": 8,
+    "minCaracter": null,
+    "maxFecha": null,
+    "minFecha": null,
+    "expresionRegular": null,
+    "visible": null,
+    "deshabilitado": null,
+    "campoId": 16
+}, {
+    "reglaValidacionId": 17,
+    "requerido": "true",
+    "maxCaracter": null,
+    "minCaracter": null,
+    "maxFecha": null,
+    "minFecha": null,
+    "expresionRegular": null,
+    "visible": null,
+    "deshabilitado": null,
+    "campoId": 17
+}, {
+    "reglaValidacionId": 18,
+    "requerido": "false",
+    "maxCaracter": null,
+    "minCaracter": null,
+    "maxFecha": null,
+    "minFecha": null,
+    "expresionRegular": null,
+    "visible": null,
+    "deshabilitado": null,
+    "campoId": 18
+}, {
+    "reglaValidacionId": 19,
+    "requerido": "true",
+    "maxCaracter": null,
+    "minCaracter": null,
+    "maxFecha": null,
+    "minFecha": null,
+    "expresionRegular": null,
+    "visible": null,
+    "deshabilitado": null,
+    "campoId": 19
+}, {
+    "reglaValidacionId": 20,
+    "requerido": "true",
+    "maxCaracter": null,
+    "minCaracter": null,
+    "maxFecha": null,
+    "minFecha": null,
+    "expresionRegular": null,
+    "visible": null,
+    "deshabilitado": null,
+    "campoId": 20
+}, {
+    "reglaValidacionId": 21,
+    "requerido": "true",
+    "maxCaracter": null,
+    "minCaracter": null,
+    "maxFecha": null,
+    "minFecha": null,
+    "expresionRegular": null,
+    "visible": null,
+    "deshabilitado": null,
+    "campoId": 21
+}, {
+    "reglaValidacionId": 22,
+    "requerido": "true",
+    "maxCaracter": null,
+    "minCaracter": null,
+    "maxFecha": null,
+    "minFecha": null,
+    "expresionRegular": null,
+    "visible": null,
+    "deshabilitado": "true",
+    "campoId": 22
+}, {
+    "reglaValidacionId": 23,
+    "requerido": "true",
+    "maxCaracter": null,
+    "minCaracter": null,
+    "maxFecha": null,
+    "minFecha": null,
+    "expresionRegular": null,
+    "visible": null,
+    "deshabilitado": "true",
+    "campoId": 23
+}, {
+    "reglaValidacionId": 24,
+    "requerido": "true",
+    "maxCaracter": null,
+    "minCaracter": null,
+    "maxFecha": null,
+    "minFecha": null,
+    "expresionRegular": null,
+    "visible": null,
+    "deshabilitado": null,
+    "campoId": 24
+}, {
+    "reglaValidacionId": 25,
+    "requerido": "true",
+    "maxCaracter": null,
+    "minCaracter": null,
+    "maxFecha": null,
+    "minFecha": null,
+    "expresionRegular": null,
+    "visible": null,
+    "deshabilitado": null,
+    "campoId": 25
+}, {
+    "reglaValidacionId": 26,
+    "requerido": "true",
+    "maxCaracter": null,
+    "minCaracter": null,
+    "maxFecha": null,
+    "minFecha": null,
+    "expresionRegular": null,
+    "visible": null,
+    "deshabilitado": null,
+    "campoId": 26
+}, {
+    "reglaValidacionId": 27,
+    "requerido": "true",
+    "maxCaracter": null,
+    "minCaracter": null,
+    "maxFecha": null,
+    "minFecha": null,
+    "expresionRegular": null,
+    "visible": null,
+    "deshabilitado": null,
+    "campoId": 27
+}, {
+    "reglaValidacionId": 28,
+    "requerido": "true",
+    "maxCaracter": null,
+    "minCaracter": null,
+    "maxFecha": null,
+    "minFecha": null,
+    "expresionRegular": null,
+    "visible": null,
+    "deshabilitado": null,
+    "campoId": 28
+}, {
+    "reglaValidacionId": 29,
+    "requerido": "true",
+    "maxCaracter": null,
+    "minCaracter": null,
+    "maxFecha": null,
+    "minFecha": null,
+    "expresionRegular": null,
+    "visible": null,
+    "deshabilitado": null,
+    "campoId": 29
+}, {
+    "reglaValidacionId": 30,
+    "requerido": "true",
+    "maxCaracter": null,
+    "minCaracter": null,
+    "maxFecha": null,
+    "minFecha": null,
+    "expresionRegular": null,
+    "visible": null,
+    "deshabilitado": null,
+    "campoId": 30
+}, {
+    "reglaValidacionId": 31,
+    "requerido": "producto='Vivienda Usada'",
+    "maxCaracter": null,
+    "minCaracter": null,
+    "maxFecha": null,
+    "minFecha": null,
+    "expresionRegular": null,
+    "visible": "producto='Vivienda Usada'",
+    "deshabilitado": null,
+    "campoId": 31
+}, {
+    "reglaValidacionId": 32,
+    "requerido": "producto='Vivienda Nueva'",
+    "maxCaracter": null,
+    "minCaracter": null,
+    "maxFecha": null,
+    "minFecha": null,
+    "expresionRegular": null,
+    "visible": "producto='Vivienda Nueva'",
+    "deshabilitado": null,
+    "campoId": 32
+}, {
+    "reglaValidacionId": 33,
+    "requerido": "true",
+    "maxCaracter": null,
+    "minCaracter": null,
+    "maxFecha": null,
+    "minFecha": null,
+    "expresionRegular": null,
+    "visible": null,
+    "deshabilitado": null,
+    "campoId": 33
+}
+];
+
+  constructor() { }
+
+  public getValidations() {
+
+    return this.validations;
+
+   }
+}
