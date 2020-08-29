@@ -3,15 +3,21 @@ import { NgModule } from '@angular/core';
 
 //Services
 import { FieldsService } from "./services/fields.service";
+import { ValidationFieldsService } from "./services/validation-fields.service";
 
 import { AppComponent } from './app.component';
 import { ConstruccionComponent } from './components/dinamicFroms/construccion.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from "@angular/common/http";
+
 import { TestComponent } from './test/test.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './components/pages/home/home.component';
 import { HeaderComponent } from './components/pages/header/header.component';
 import { BreadcrumbsComponent } from './components/pages/breadcrumbs/breadcrumbs.component';
+import { PagesComponent } from './components/pages.component';
+import { LoginComponent } from './components/pages/login/login.component';
+
 
 @NgModule({
   declarations: [
@@ -20,15 +26,19 @@ import { BreadcrumbsComponent } from './components/pages/breadcrumbs/breadcrumbs
     TestComponent,
     HomeComponent,
     HeaderComponent,
-    BreadcrumbsComponent
+    BreadcrumbsComponent,
+    PagesComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [
-    FieldsService
+    FieldsService,
+    ValidationFieldsService
   ],
   bootstrap: [AppComponent]
 })
